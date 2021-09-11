@@ -14,41 +14,33 @@ namespace WinForm {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form Agregar_Articulo = new Form2();
-            Agregar_Articulo.Show();
+        private void button1_Click(object sender, EventArgs e) {
+            Form AgregarArticulo = new Form2();
+            AgregarArticulo.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form Modificar_Articulo = new Form3();
-            Modificar_Articulo.Show();
+        private void button2_Click(object sender, EventArgs e) {
+            Form ModificarArticulo = new Form3();
+            ModificarArticulo.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form Eliminar_Articulo = new Form4();
-            Eliminar_Articulo.Show();
-
+        private void button3_Click(object sender, EventArgs e) {
+            Form EliminarArticulo = new Form4();
+            EliminarArticulo.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form Listar_Articulo = new Form5();
-            Listar_Articulo.Show();
+        private void button4_Click(object sender, EventArgs e) {
+            Form BuscarArticulo = new Form5();
+            BuscarArticulo.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Form Busqueda_Articulo = new Form6();
-            Busqueda_Articulo.Show();
+        private void button5_Click(object sender, EventArgs e) {
+            Form ListarArticulos = new Form6();
+            ListarArticulos.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Form Articulo_detallado = new Form7();
-            Articulo_detallado.Show();
+        private void button6_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }

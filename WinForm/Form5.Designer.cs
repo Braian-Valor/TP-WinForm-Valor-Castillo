@@ -35,9 +35,12 @@ namespace WinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::WinForm.Properties.Resources._8b6e695fb470ba5939b226d06d55248e;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(436, 403);
             this.Name = "Form5";
-            this.Text = "Listar Articulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TP WinForm";
             this.ResumeLayout(false);
 
         }
