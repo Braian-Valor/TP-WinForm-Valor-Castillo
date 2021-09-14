@@ -111,7 +111,6 @@ namespace WinForm {
             this.button4.TabIndex = 10;
             this.button4.Text = "BUSCAR ARTICULO";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -128,7 +127,6 @@ namespace WinForm {
             this.button5.TabIndex = 11;
             this.button5.Text = "LISTAR ARTICULOS";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 

@@ -29,16 +29,6 @@ namespace WinForm {
             EliminarArticulo.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e) {
-            Form BuscarArticulo = new Form5();
-            BuscarArticulo.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e) {
-            Form ListarArticulos = new Form6();
-            ListarArticulos.Show();
-        }
-
         private void button6_Click(object sender, EventArgs e) {
             this.Close();
         }

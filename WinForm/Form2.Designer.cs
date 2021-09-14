@@ -39,7 +39,7 @@ namespace WinForm
             this.lab_Marca = new System.Windows.Forms.Label();
             this.tBox_Precio = new System.Windows.Forms.TextBox();
             this.lab_Imagen = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxArticulos = new System.Windows.Forms.PictureBox();
             this.lab_Precio = new System.Windows.Forms.Label();
             this.tBox_DirImagen = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -47,7 +47,9 @@ namespace WinForm
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.dgvArticulos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // lab_CodigoArticulo
@@ -165,13 +167,14 @@ namespace WinForm
             this.lab_Imagen.Text = "Imagen:";
             this.lab_Imagen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // pbxArticulos
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(396, 72);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 153);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pbxArticulos.Location = new System.Drawing.Point(396, 72);
+            this.pbxArticulos.Name = "pbxArticulos";
+            this.pbxArticulos.Size = new System.Drawing.Size(221, 153);
+            this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulos.TabIndex = 10;
+            this.pbxArticulos.TabStop = false;
             // 
             // lab_Precio
             // 
@@ -276,13 +279,23 @@ namespace WinForm
             this.button4.Text = "Eliminar";
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // dgvArticulos
+            // 
+            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.Location = new System.Drawing.Point(30, 349);
+            this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.Size = new System.Drawing.Size(587, 198);
+            this.dgvArticulos.TabIndex = 35;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WinForm.Properties.Resources._8b6e695fb470ba5939b226d06d55248e;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(642, 355);
+            this.ClientSize = new System.Drawing.Size(642, 559);
+            this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -290,7 +303,7 @@ namespace WinForm
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.tBox_DirImagen);
             this.Controls.Add(this.lab_Precio);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxArticulos);
             this.Controls.Add(this.tBox_Precio);
             this.Controls.Add(this.lab_Imagen);
             this.Controls.Add(this.tBox_Marca);
@@ -305,7 +318,9 @@ namespace WinForm
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TP WinForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,7 +338,7 @@ namespace WinForm
         private System.Windows.Forms.Label lab_Marca;
         private System.Windows.Forms.TextBox tBox_Precio;
         private System.Windows.Forms.Label lab_Imagen;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxArticulos;
         private System.Windows.Forms.Label lab_Precio;
         private System.Windows.Forms.TextBox tBox_DirImagen;
         private System.Windows.Forms.Button btnAgregar;
@@ -331,5 +346,6 @@ namespace WinForm
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dgvArticulos;
     }
 }

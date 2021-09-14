@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace WinForm {
     class Marca {
-        public int id { get; set; }
-        public string descripccion { get; set; }
+        public int Id { get; set; }
+        public string Descripccion { get; set; }
 
+        public override string ToString() {
+            return Descripccion; 
+        }
     }
 }
