@@ -11,13 +11,13 @@ using Dominio;
 using Negocio;
 
 namespace WinForm {
-    public partial class Form2 : Form {
+    public partial class FrmPrincipal : Form {
         private List<Articulo> listaArticulo;
-        public Form2() {
+        public FrmPrincipal() {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e) {
+        private void FrmPrincipal_Load(object sender, EventArgs e) {
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulo = negocio.listar();
             dgvArticulos.DataSource = listaArticulo;
@@ -37,6 +37,11 @@ namespace WinForm {
             catch (Exception) {
                 pbxArticulos.Load("http://atrilco.com/wp-content/uploads/2017/11/ef3-placeholder-image.jpg");
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e) {
+            Frm_NuevoArticulo altaArticulo = new Frm_NuevoArticulo();
+            altaArticulo.ShowDialog();
         }
     }
 }

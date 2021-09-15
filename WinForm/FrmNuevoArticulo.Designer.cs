@@ -1,7 +1,7 @@
 ﻿
 namespace WinForm
 {
-    partial class Form3
+    partial class Frm_NuevoArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,12 @@ namespace WinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.tBox_DirImagen = new System.Windows.Forms.TextBox();
             this.lab_Precio = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tBox_Precio = new System.Windows.Forms.TextBox();
             this.lab_Imagen = new System.Windows.Forms.Label();
-            this.tBox_Marca = new System.Windows.Forms.TextBox();
             this.lab_Marca = new System.Windows.Forms.Label();
             this.tBox_Descripcion = new System.Windows.Forms.TextBox();
             this.lab_Descripcion = new System.Windows.Forms.Label();
@@ -44,45 +42,33 @@ namespace WinForm
             this.lab_Nombre = new System.Windows.Forms.Label();
             this.tBox_CodigoArticulo = new System.Windows.Forms.TextBox();
             this.lab_CodigoArticulo = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.cBox_Marca = new System.Windows.Forms.ComboBox();
+            this.cBox_Categoria = new System.Windows.Forms.ComboBox();
+            this.lab_Categoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(255, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 31);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.Location = new System.Drawing.Point(393, 244);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(221, 23);
-            this.btnAgregar.TabIndex = 29;
-            this.btnAgregar.Text = "Examinar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAceptar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.Location = new System.Drawing.Point(204, 341);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(107, 31);
+            this.btnAceptar.TabIndex = 30;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // tBox_DirImagen
             // 
-            this.tBox_DirImagen.Location = new System.Drawing.Point(168, 201);
+            this.tBox_DirImagen.Location = new System.Drawing.Point(168, 235);
             this.tBox_DirImagen.MaxLength = 1000;
             this.tBox_DirImagen.Name = "tBox_DirImagen";
             this.tBox_DirImagen.Size = new System.Drawing.Size(194, 20);
@@ -96,7 +82,7 @@ namespace WinForm
             this.lab_Precio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lab_Precio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Precio.ForeColor = System.Drawing.Color.White;
-            this.lab_Precio.Location = new System.Drawing.Point(26, 251);
+            this.lab_Precio.Location = new System.Drawing.Point(26, 285);
             this.lab_Precio.Name = "lab_Precio";
             this.lab_Precio.Size = new System.Drawing.Size(57, 16);
             this.lab_Precio.TabIndex = 27;
@@ -105,20 +91,20 @@ namespace WinForm
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(393, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(393, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 153);
+            this.pictureBox1.Size = new System.Drawing.Size(243, 277);
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
             // tBox_Precio
             // 
-            this.tBox_Precio.Location = new System.Drawing.Point(168, 247);
+            this.tBox_Precio.Location = new System.Drawing.Point(168, 281);
             this.tBox_Precio.MaxLength = 50;
             this.tBox_Precio.Name = "tBox_Precio";
             this.tBox_Precio.Size = new System.Drawing.Size(194, 20);
             this.tBox_Precio.TabIndex = 25;
-            this.tBox_Precio.Text = "$ \r\n\r\n";
+            this.tBox_Precio.Text = "\r\n\r\n";
             // 
             // lab_Imagen
             // 
@@ -127,21 +113,12 @@ namespace WinForm
             this.lab_Imagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lab_Imagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Imagen.ForeColor = System.Drawing.Color.White;
-            this.lab_Imagen.Location = new System.Drawing.Point(26, 205);
+            this.lab_Imagen.Location = new System.Drawing.Point(26, 239);
             this.lab_Imagen.Name = "lab_Imagen";
             this.lab_Imagen.Size = new System.Drawing.Size(63, 16);
             this.lab_Imagen.TabIndex = 24;
             this.lab_Imagen.Text = "Imagen:";
             this.lab_Imagen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tBox_Marca
-            // 
-            this.tBox_Marca.Location = new System.Drawing.Point(168, 157);
-            this.tBox_Marca.MaxLength = 50;
-            this.tBox_Marca.Name = "tBox_Marca";
-            this.tBox_Marca.Size = new System.Drawing.Size(194, 20);
-            this.tBox_Marca.TabIndex = 23;
-            this.tBox_Marca.Text = "\r\n";
             // 
             // lab_Marca
             // 
@@ -150,7 +127,7 @@ namespace WinForm
             this.lab_Marca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lab_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab_Marca.ForeColor = System.Drawing.Color.White;
-            this.lab_Marca.Location = new System.Drawing.Point(26, 161);
+            this.lab_Marca.Location = new System.Drawing.Point(26, 157);
             this.lab_Marca.Name = "lab_Marca";
             this.lab_Marca.Size = new System.Drawing.Size(55, 16);
             this.lab_Marca.TabIndex = 22;
@@ -226,38 +203,70 @@ namespace WinForm
             this.lab_CodigoArticulo.Text = "Codigo de Articulo:";
             this.lab_CodigoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(393, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 23);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Location = new System.Drawing.Point(370, 341);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(107, 31);
+            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // Form3
+            // cBox_Marca
+            // 
+            this.cBox_Marca.FormattingEnabled = true;
+            this.cBox_Marca.Location = new System.Drawing.Point(168, 152);
+            this.cBox_Marca.Name = "cBox_Marca";
+            this.cBox_Marca.Size = new System.Drawing.Size(194, 21);
+            this.cBox_Marca.TabIndex = 33;
+            // 
+            // cBox_Categoria
+            // 
+            this.cBox_Categoria.FormattingEnabled = true;
+            this.cBox_Categoria.Location = new System.Drawing.Point(168, 194);
+            this.cBox_Categoria.Name = "cBox_Categoria";
+            this.cBox_Categoria.Size = new System.Drawing.Size(194, 21);
+            this.cBox_Categoria.TabIndex = 35;
+            // 
+            // lab_Categoria
+            // 
+            this.lab_Categoria.AutoSize = true;
+            this.lab_Categoria.BackColor = System.Drawing.Color.Transparent;
+            this.lab_Categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lab_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_Categoria.ForeColor = System.Drawing.Color.White;
+            this.lab_Categoria.Location = new System.Drawing.Point(26, 199);
+            this.lab_Categoria.Name = "lab_Categoria";
+            this.lab_Categoria.Size = new System.Drawing.Size(80, 16);
+            this.lab_Categoria.TabIndex = 34;
+            this.lab_Categoria.Text = "Categoria:";
+            this.lab_Categoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Frm_NuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WinForm.Properties.Resources._8b6e695fb470ba5939b226d06d55248e;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(641, 364);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAgregar);
+            this.ClientSize = new System.Drawing.Size(665, 405);
+            this.Controls.Add(this.cBox_Categoria);
+            this.Controls.Add(this.lab_Categoria);
+            this.Controls.Add(this.cBox_Marca);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tBox_DirImagen);
             this.Controls.Add(this.lab_Precio);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tBox_Precio);
             this.Controls.Add(this.lab_Imagen);
-            this.Controls.Add(this.tBox_Marca);
             this.Controls.Add(this.lab_Marca);
             this.Controls.Add(this.tBox_Descripcion);
             this.Controls.Add(this.lab_Descripcion);
@@ -265,9 +274,10 @@ namespace WinForm
             this.Controls.Add(this.lab_Nombre);
             this.Controls.Add(this.tBox_CodigoArticulo);
             this.Controls.Add(this.lab_CodigoArticulo);
-            this.Name = "Form3";
+            this.Name = "Frm_NuevoArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TP WinForm";
+            this.Text = "Nuevo Articulo";
+            this.Load += new System.EventHandler(this.Frm_NuevoArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -276,14 +286,12 @@ namespace WinForm
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox tBox_DirImagen;
         private System.Windows.Forms.Label lab_Precio;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tBox_Precio;
         private System.Windows.Forms.Label lab_Imagen;
-        private System.Windows.Forms.TextBox tBox_Marca;
         private System.Windows.Forms.Label lab_Marca;
         private System.Windows.Forms.TextBox tBox_Descripcion;
         private System.Windows.Forms.Label lab_Descripcion;
@@ -291,6 +299,9 @@ namespace WinForm
         private System.Windows.Forms.Label lab_Nombre;
         private System.Windows.Forms.TextBox tBox_CodigoArticulo;
         private System.Windows.Forms.Label lab_CodigoArticulo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cBox_Marca;
+        private System.Windows.Forms.ComboBox cBox_Categoria;
+        private System.Windows.Forms.Label lab_Categoria;
     }
 }
