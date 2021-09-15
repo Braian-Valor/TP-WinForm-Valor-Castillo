@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Dominio;
 
-namespace WinForm {
-    class ArticuloNegocio {
+namespace Negocio {
+    public class ArticuloNegocio {
         public List<Articulo> listar() {
             
             List<Articulo> lista = new List<Articulo>();

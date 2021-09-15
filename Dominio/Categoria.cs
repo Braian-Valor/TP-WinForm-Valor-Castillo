@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinForm {
-    class Marca {
+namespace Dominio {
+    public class Categoria {
         public int Id { get; set; }
         public string Descripccion { get; set; }
-
         public override string ToString() {
-            return Descripccion; 
+            return Descripccion;
         }
     }
 }
