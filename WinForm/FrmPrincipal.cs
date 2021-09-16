@@ -18,16 +18,25 @@ namespace WinForm {
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e) {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulo = negocio.listar();
-            dgvArticulos.DataSource = listaArticulo;
-            dgvArticulos.Columns["ImagenUrl"].Visible = false;
-            cargarImagen(listaArticulo[0].ImagenUrl);
+            cargar();
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e) {
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.ImagenUrl);
+        }
+
+        private void cargar() {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try {
+                listaArticulo = negocio.listar();
+                dgvArticulos.DataSource = listaArticulo;
+                dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                cargarImagen(listaArticulo[0].ImagenUrl);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cargarImagen(string imagen) {
@@ -42,6 +51,7 @@ namespace WinForm {
         private void btnAgregar_Click(object sender, EventArgs e) {
             Frm_NuevoArticulo altaArticulo = new Frm_NuevoArticulo();
             altaArticulo.ShowDialog();
+            cargar();
         }
     }
 }

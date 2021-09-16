@@ -32,7 +32,7 @@ namespace WinForm
             this.btnAceptar = new System.Windows.Forms.Button();
             this.tBox_DirImagen = new System.Windows.Forms.TextBox();
             this.lab_Precio = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pBoxAlta = new System.Windows.Forms.PictureBox();
             this.tBox_Precio = new System.Windows.Forms.TextBox();
             this.lab_Imagen = new System.Windows.Forms.Label();
             this.lab_Marca = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace WinForm
             this.cBox_Marca = new System.Windows.Forms.ComboBox();
             this.cBox_Categoria = new System.Windows.Forms.ComboBox();
             this.lab_Categoria = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxAlta)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -61,7 +61,7 @@ namespace WinForm
             this.btnAceptar.Location = new System.Drawing.Point(204, 341);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(107, 31);
-            this.btnAceptar.TabIndex = 30;
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -72,8 +72,9 @@ namespace WinForm
             this.tBox_DirImagen.MaxLength = 1000;
             this.tBox_DirImagen.Name = "tBox_DirImagen";
             this.tBox_DirImagen.Size = new System.Drawing.Size(194, 20);
-            this.tBox_DirImagen.TabIndex = 28;
+            this.tBox_DirImagen.TabIndex = 5;
             this.tBox_DirImagen.Text = "\r\n";
+            this.tBox_DirImagen.Leave += new System.EventHandler(this.tBox_DirImagen_Leave);
             // 
             // lab_Precio
             // 
@@ -89,13 +90,13 @@ namespace WinForm
             this.lab_Precio.Text = "Precio:";
             this.lab_Precio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // pBoxAlta
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(393, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(243, 277);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
+            this.pBoxAlta.Location = new System.Drawing.Point(393, 24);
+            this.pBoxAlta.Name = "pBoxAlta";
+            this.pBoxAlta.Size = new System.Drawing.Size(274, 277);
+            this.pBoxAlta.TabIndex = 26;
+            this.pBoxAlta.TabStop = false;
             // 
             // tBox_Precio
             // 
@@ -103,7 +104,7 @@ namespace WinForm
             this.tBox_Precio.MaxLength = 50;
             this.tBox_Precio.Name = "tBox_Precio";
             this.tBox_Precio.Size = new System.Drawing.Size(194, 20);
-            this.tBox_Precio.TabIndex = 25;
+            this.tBox_Precio.TabIndex = 6;
             this.tBox_Precio.Text = "\r\n\r\n";
             // 
             // lab_Imagen
@@ -115,9 +116,9 @@ namespace WinForm
             this.lab_Imagen.ForeColor = System.Drawing.Color.White;
             this.lab_Imagen.Location = new System.Drawing.Point(26, 239);
             this.lab_Imagen.Name = "lab_Imagen";
-            this.lab_Imagen.Size = new System.Drawing.Size(63, 16);
+            this.lab_Imagen.Size = new System.Drawing.Size(87, 16);
             this.lab_Imagen.TabIndex = 24;
-            this.lab_Imagen.Text = "Imagen:";
+            this.lab_Imagen.Text = "Url Imagen:";
             this.lab_Imagen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lab_Marca
@@ -137,10 +138,10 @@ namespace WinForm
             // tBox_Descripcion
             // 
             this.tBox_Descripcion.Location = new System.Drawing.Point(168, 109);
-            this.tBox_Descripcion.MaxLength = 150;
+            this.tBox_Descripcion.MaxLength = 1000;
             this.tBox_Descripcion.Name = "tBox_Descripcion";
             this.tBox_Descripcion.Size = new System.Drawing.Size(194, 20);
-            this.tBox_Descripcion.TabIndex = 21;
+            this.tBox_Descripcion.TabIndex = 2;
             this.tBox_Descripcion.Text = "\r\n";
             // 
             // lab_Descripcion
@@ -163,7 +164,7 @@ namespace WinForm
             this.tBox_Nombre.MaxLength = 50;
             this.tBox_Nombre.Name = "tBox_Nombre";
             this.tBox_Nombre.Size = new System.Drawing.Size(194, 20);
-            this.tBox_Nombre.TabIndex = 19;
+            this.tBox_Nombre.TabIndex = 1;
             this.tBox_Nombre.Text = "\r\n";
             // 
             // lab_Nombre
@@ -186,7 +187,7 @@ namespace WinForm
             this.tBox_CodigoArticulo.MaxLength = 50;
             this.tBox_CodigoArticulo.Name = "tBox_CodigoArticulo";
             this.tBox_CodigoArticulo.Size = new System.Drawing.Size(194, 20);
-            this.tBox_CodigoArticulo.TabIndex = 17;
+            this.tBox_CodigoArticulo.TabIndex = 0;
             this.tBox_CodigoArticulo.Text = "\r\n";
             // 
             // lab_CodigoArticulo
@@ -212,29 +213,31 @@ namespace WinForm
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Location = new System.Drawing.Point(370, 341);
+            this.btnCancelar.Location = new System.Drawing.Point(393, 341);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 31);
-            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cBox_Marca
             // 
+            this.cBox_Marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Marca.FormattingEnabled = true;
             this.cBox_Marca.Location = new System.Drawing.Point(168, 152);
             this.cBox_Marca.Name = "cBox_Marca";
             this.cBox_Marca.Size = new System.Drawing.Size(194, 21);
-            this.cBox_Marca.TabIndex = 33;
+            this.cBox_Marca.TabIndex = 3;
             // 
             // cBox_Categoria
             // 
+            this.cBox_Categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Categoria.FormattingEnabled = true;
             this.cBox_Categoria.Location = new System.Drawing.Point(168, 194);
             this.cBox_Categoria.Name = "cBox_Categoria";
             this.cBox_Categoria.Size = new System.Drawing.Size(194, 21);
-            this.cBox_Categoria.TabIndex = 35;
+            this.cBox_Categoria.TabIndex = 4;
             // 
             // lab_Categoria
             // 
@@ -256,7 +259,7 @@ namespace WinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WinForm.Properties.Resources._8b6e695fb470ba5939b226d06d55248e;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(665, 405);
+            this.ClientSize = new System.Drawing.Size(700, 405);
             this.Controls.Add(this.cBox_Categoria);
             this.Controls.Add(this.lab_Categoria);
             this.Controls.Add(this.cBox_Marca);
@@ -264,7 +267,7 @@ namespace WinForm
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tBox_DirImagen);
             this.Controls.Add(this.lab_Precio);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pBoxAlta);
             this.Controls.Add(this.tBox_Precio);
             this.Controls.Add(this.lab_Imagen);
             this.Controls.Add(this.lab_Marca);
@@ -278,7 +281,7 @@ namespace WinForm
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Articulo";
             this.Load += new System.EventHandler(this.Frm_NuevoArticulo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxAlta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +292,7 @@ namespace WinForm
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox tBox_DirImagen;
         private System.Windows.Forms.Label lab_Precio;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pBoxAlta;
         private System.Windows.Forms.TextBox tBox_Precio;
         private System.Windows.Forms.Label lab_Imagen;
         private System.Windows.Forms.Label lab_Marca;
