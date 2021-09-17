@@ -31,6 +31,7 @@ namespace WinForm {
             try {
                 listaArticulo = negocio.listar();
                 dgvArticulos.DataSource = listaArticulo;
+                dgvArticulos.Columns["Id"].Visible = false;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
                 cargarImagen(listaArticulo[0].ImagenUrl);
             }
@@ -51,6 +52,15 @@ namespace WinForm {
         private void btnAgregar_Click(object sender, EventArgs e) {
             Frm_NuevoArticulo altaArticulo = new Frm_NuevoArticulo();
             altaArticulo.ShowDialog();
+            cargar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e) {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            Frm_NuevoArticulo modificar = new Frm_NuevoArticulo(seleccionado); ;
+            modificar.ShowDialog();
             cargar();
         }
     }

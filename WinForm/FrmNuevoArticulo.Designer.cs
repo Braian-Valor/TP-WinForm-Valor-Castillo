@@ -95,6 +95,7 @@ namespace WinForm
             this.pBoxAlta.Location = new System.Drawing.Point(393, 24);
             this.pBoxAlta.Name = "pBoxAlta";
             this.pBoxAlta.Size = new System.Drawing.Size(274, 277);
+            this.pBoxAlta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxAlta.TabIndex = 26;
             this.pBoxAlta.TabStop = false;
             // 
