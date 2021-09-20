@@ -18,7 +18,7 @@ namespace Negocio {
             try {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select Codigo, Nombre, A.Descripcion, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria, M.Id IdMarca, C.Id IdCategoria, A.Id IdArticulo from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca = M.Id and A.IdCategoria = C.Id";
+                comando.CommandText = "select Codigo, Nombre, A.Descripcion, ImagenUrl, M.Descripcion Marca, C.Descripcion Categoria, M.Id IdMarca, C.Id IdCategoria, A.Id IdArticulo, Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where A.IdMarca = M.Id and A.IdCategoria = C.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -43,6 +43,8 @@ namespace Negocio {
                     aux.Categoria.Id = (int)lector["IdCategoria"];
                     if (!(lector["Categoria"] is DBNull))
                         aux.Categoria.Descripcion = (String)lector["Categoria"];
+                    if (!(lector["Precio"] is DBNull))
+                        aux.Precio = (decimal)lector["Precio"];
 
                     lista.Add(aux);
                 }
@@ -59,10 +61,11 @@ namespace Negocio {
             AccesoDatos datos = new AccesoDatos();
 
             try {
-                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl) values('" + nuevoArticulo.CodigoArticulo + "', '" + nuevoArticulo.Nombre + "', '" + nuevoArticulo.Descripccion + "', @IdMarca, @IdCategoria, @ImagenUrl)");
+                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values('" + nuevoArticulo.CodigoArticulo + "', '" + nuevoArticulo.Nombre + "', '" + nuevoArticulo.Descripccion + "', @IdMarca, @IdCategoria, @ImagenUrl, @Precio)");
                 datos.setearParametro("@IdMarca", nuevoArticulo.Marca.Id);
                 datos.setearParametro("@IdCategoria", nuevoArticulo.Categoria.Id);
                 datos.setearParametro("@ImagenUrl", nuevoArticulo.ImagenUrl);
+                datos.setearParametro("@Precio", nuevoArticulo.Precio);
                 datos.ejecutarAccion();
             }
             catch (Exception ex) {
@@ -76,7 +79,7 @@ namespace Negocio {
         public void modificar(Articulo articulo) {
             AccesoDatos datos = new AccesoDatos();
             try {
-                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @marca, IdCategoria = @categoria, ImagenUrl = @img where Id = @id");
+                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @marca, IdCategoria = @categoria, ImagenUrl = @img, Precio = @Precio where Id = @id");
                 datos.setearParametro("@codigo", articulo.CodigoArticulo);
                 datos.setearParametro("@nombre", articulo.Nombre);
                 datos.setearParametro("@descripcion", articulo.Descripccion);
@@ -84,6 +87,23 @@ namespace Negocio {
                 datos.setearParametro("@categoria", articulo.Categoria.Id);
                 datos.setearParametro("@img", articulo.ImagenUrl);
                 datos.setearParametro("@id", articulo.Id);
+                datos.setearParametro("@Precio", articulo.Precio);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+            finally {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Articulo articulo) {
+            AccesoDatos datos = new AccesoDatos();
+            try {
+                datos.setearConsulta("delete from ARTICULOS where Id = @Id");
+                datos.setearParametro("@Id", articulo.Id);
 
                 datos.ejecutarAccion();
             }

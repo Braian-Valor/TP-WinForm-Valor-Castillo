@@ -31,7 +31,7 @@ namespace WinForm {
             try {
                 listaArticulo = negocio.listar();
                 dgvArticulos.DataSource = listaArticulo;
-                dgvArticulos.Columns["Id"].Visible = false;
+                //dgvArticulos.Columns["Id"].Visible = false;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
                 cargarImagen(listaArticulo[0].ImagenUrl);
             }
@@ -61,6 +61,14 @@ namespace WinForm {
 
             Frm_NuevoArticulo modificar = new Frm_NuevoArticulo(seleccionado); ;
             modificar.ShowDialog();
+            cargar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e) {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            ArticuloNegocio artEliminar = new ArticuloNegocio();
+            artEliminar.eliminar(seleccionado);
             cargar();
         }
     }

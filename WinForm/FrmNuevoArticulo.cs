@@ -41,6 +41,7 @@ namespace WinForm {
                 articulo.Marca = (Marca)cBox_Marca.SelectedItem;
                 articulo.Categoria = (Categoria)cBox_Categoria.SelectedItem;
                 articulo.ImagenUrl = tBox_DirImagen.Text;
+                articulo.Precio = decimal.Parse(tBox_Precio.Text);
 
                 if (articulo.Id != 0) {
                     negocio.modificar(articulo);
@@ -77,6 +78,7 @@ namespace WinForm {
                     cBox_Categoria.SelectedValue = articulo.Categoria.Id;
                     tBox_DirImagen.Text = articulo.ImagenUrl;
                     cargarImagen(articulo.ImagenUrl);
+                    tBox_Precio.Text = Convert.ToString(articulo.Precio);
                 }
                 
             }
